@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     // El alumno debe modificar esta parte para que:
     //
     // - Si categoriaSeleccionada == 'Todos':
-    //     se muestren todos los eventos.
+    //     se muestrean todos los eventos.
     //
     // - Si se selecciona otra categoría:
     //     solamente aparezcan los eventos de esa categoría.
@@ -30,7 +30,11 @@ class _HomePageState extends State<HomePage> {
     // Pista:
     // List.where(...).toList();
 
-    final eventosMostrados = eventos;
+    final eventosMostrados = eventos
+        .where((evento) =>
+            categoriaSeleccionada == 'Todos' || // Si la categoría seleccionada es "Todos", se muestran todos los eventos.
+            evento['categoria'] == categoriaSeleccionada) // Si la categoría seleccionada no es "Todos", se filtran los eventos por la categoría seleccionada.
+        .toList();
 
     return Scaffold(
       appBar: AppBar(
