@@ -119,6 +119,13 @@ class _HomePageState extends State<HomePage> {
                             // TODO:
                             // Mostrar un SnackBar indicando el evento
                             // seleccionado.
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                    'Evento seleccionado: ${evento['titulo']}'),
+                                duration: const Duration(seconds: 2),
+                              ),
+                            );
                           },
                         );
                       },

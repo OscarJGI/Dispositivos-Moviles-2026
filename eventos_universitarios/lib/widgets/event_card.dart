@@ -51,15 +51,42 @@ class EventCard extends StatelessWidget {
 
           // TODO 1:
           // Agregar al diseño la hora, el lugar y el cupo del evento.
-          //
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Text('Hora: ${evento['hora']}'),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Text('Lugar: ${evento['lugar']}'),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Text('Cupo: ${evento['cupo']}'),
+          ),
           // TODO 2:
           // Agregar un botón que permita registrarse o marcar
-          // el evento como "Me interesa".
-          //
+          // el evento como "Me interesa". 
           // El botón deberá ejecutar:
           // onPressed();
-
-          const SizedBox(height: 8),
+          // Con un diseño creativo y atractivo, usando formas y no solo un texto plano.
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: ElevatedButton(
+              onPressed: onPressed,
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                padding: const EdgeInsets.symmetric(vertical: 12),
+              ),
+              child: const Center(
+                child: Text(
+                  'Me interesa',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
